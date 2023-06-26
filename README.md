@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 or
 
-pip install ujson pillow
+pip install ujson pillow requests
 
 Example Usage:
 
