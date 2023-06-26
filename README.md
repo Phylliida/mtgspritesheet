@@ -1,6 +1,14 @@
 # mtgspritesheet
 Makes a Sprite Sheet out of a MTG deck using Scryfall
 
+Install dependencies:
+
+pip install -r requirements.txt
+
+or
+
+pip install ujson pillow
+
 Example Usage:
 
 python makeGrid.py "Be the Dragon.txt" 5 full out.png
