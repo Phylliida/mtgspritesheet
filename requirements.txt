@@ -1,2 +1,3 @@
 ujson
 pillow
+requests
