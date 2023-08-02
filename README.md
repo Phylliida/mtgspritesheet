@@ -1,6 +1,8 @@
 # mtgspritesheet
 Makes a Sprite Sheet out of a MTG deck using Scryfall
 
+If you want to do the same thing but in the web, try apnda's [Online Tool](https://ctrl-c.club/~apnda/mtg.html)
+
 Install dependencies:
 
 pip install -r requirements.txt
