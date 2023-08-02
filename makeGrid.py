@@ -210,7 +210,6 @@ def getScryfallImages(cardName, num, set=None, landconfig=None, lang='en'):
                 foundCard = None
                 # neccessary because, for example, "sol ring" will return solemn offering (note sol ring is in that text)
                 for card in results:
-                    print(card['name'])
                     if card['name'].lower().strip() == cardName.lower().strip():
                         print("found card", cardName, "in set", card['set'])
                         foundCard = card
