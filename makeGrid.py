@@ -206,7 +206,17 @@ def getScryfallImages(cardName, num, set=None, landconfig=None, lang='en'):
             print("Using scryfall search")
             time.sleep(0.2) # rate limit
             try:
-                imageUrl = ujson.loads(requests.get("https://api.scryfall.com/cards/search?q=" + urllib.parse.quote_plus(cardName)).content)['data'][0]['image_uris']['large']
+                results = ujson.loads(requests.get("https://api.scryfall.com/cards/search?q=" + urllib.parse.quote_plus(cardName)).content)['data']
+                foundCard = None
+                # neccessary because, for example, "sol ring" will return solemn offering (note sol ring is in that text)
+                for card in results:
+                    print(card['name'])
+                    if card['name'].lower().strip() == cardName.lower().strip():
+                        print("found card", cardName, "in set", card['set'])
+                        foundCard = card
+                if foundCard is None:
+                    raise KeyError()
+                imageUrl = foundCard['image_uris']['large']
             except KeyError:
                 raise Exception("Scryfall search failed for card", cardName, "are you sure it is real?")
             response = requests.get(imageUrl)
